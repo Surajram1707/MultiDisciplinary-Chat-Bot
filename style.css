@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+body{
+	background: url("https://images.unsplash.com/photo-1454117096348-e4abbeba002c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+*{
+  font-family: 'Acme', sans-serif;
+}
+
+#chatlog{
+	font-size: 45px;
+	color: black;
+	max-width: 800px;
+	min-width: 90px;
+
+
+}
+#log{
+	font-size: 20px;
+	color: black;
+  overflow: auto;
+ height: 30%;
+  width: 100%;
+
+}
+#heading{
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+h1{
+	color: white;
+}
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  color: white;
+  border: 3px solid white;
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.6);
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+.rightfl{
+	float: right;
+	border: none !important;
+	border-radius: 50%;
+	background:transparent;
+	outline: none !important;
+  margin: none ;
+
+}
+.rightfl2{
+  float: right;
+  border: 2px solid black;
+outline: none !important;
+  border-radius: 30px;
+  background-color: white
+  
+  margin: none ;
+
+}
+.rightf1{
+	float: right;
+	color: white !important;
+	opacity: 1.0 !important;
+	border: none !important;
+	border-radius: 50%;
+	background:white;
+	outline: none !important;
+}
+#userBox{
+	border-radius: 40px;
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid black;
+	background-color: white;
+    
+    height: 80px;
+	max-width: 300px;
+	min-width: 90px;
+
+	outline: none !important;
+
+}
+#uname{
+	border-radius: 40px;
+	font-size: 20px;
+	text-align: center;
+	border: 3px solid black;
+	background-color:white;
+    
+    height: 60px;
+	max-width: 200px;
+	min-width: 90px;
+
+	outline: none !important;
+
+}
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0,0, 0.5);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-container.active {
+    display: flex;
+}
+
+.popup {
+    background-color: grey;
+    border-radius: 5px;
+    border: 3px solid white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    position: relative;
+    width: 500px;
+}
+
+.popup button {
+    background-color: grey;
+    color: black;
+    outline: none !important;
+    border:none !important;
+    font-size: 3rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+#open{
+  border:3px solid black;
+  border-radius: 20px;
+}
+
+
+section{
+	border: 3px solid black;
+	border-radius: 10px;
+	background-color:rgba(255,255,255,0.4);
+	max-width: 800px;
+	min-width: 300px;
+	height: inherit;
+
+}
+.txt{
+	font-size: 30px;
+	color: black;
+
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  background: url("https://i.pinimg.com/originals/aa/29/2c/aa292c3ff3b186e9389bbee3a2d0d591.gif");
+   background-repeat: no-repeat;
+   opacity: 1.0;
+	background-size: 100% 100%;
+	background-attachment: fixed;/* violet background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; 
+  transition: .5s ease;
+
+}
+
+#overlay .fa{
+	float: right;
+	border: none !important;
+	border-radius: 50%;
+	background:transparent;
+	outline: none !important;
+	color: white !important;
+
+}
+.fa{
+	text-align:center;
+	align-items: center;
+	color: black !important;
+  font-weight:bolder;
+	text-shadow: 0 0 100px red;
+	
+}
+
+#confirm {
+            display: none;
+            background-color: #F3F5F6;
+            color: #000000;
+            border: 1px solid #aaa;
+            position: fixed;
+            width: 300px;
+            height: 100px;
+            left: 40%;
+            top: 40%;
+            box-sizing: border-box;
+            text-align: center;
+         }
+ #confirm button {
+            background-color: #FFFFFF;
+            display: inline-block;
+            border-radius: 12px;
+            border: 4px solid #aaa;
+            padding: 5px;
+            text-align: center;
+            width: 60px;
+            cursor: pointer;
+         }
+ #confirm .message {
+            text-align: left;
+         }
+
+#footer {
+    background-color: grey;
+    color: black;
+    border-radius: 30px;
+    
+    height: 20px;
+    font-weight: bolder;
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+    width: 1300px;
+    position: fixed;
+    bottom: 2;
+   
+}
+body::-webkit-scrollbar {
+  width: 22px;  
+              /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+          /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: white;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 7px solid black;  /* creates padding around scroll thumb */
+}
+#log::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+#log::-webkit-scrollbar-track {
+  background: black;        /* color of the tracking area */
+}
+
+#log::-webkit-scrollbar-thumb {
+  background-color: white;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid black;  /* creates padding around scroll thumb */
+}
+

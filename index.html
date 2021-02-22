@@ -1,0 +1,213 @@
+<html>
+    <head>
+        <title>Chat With Me</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            var count =1;
+            
+            know = {
+               
+                "hello" : " Hi,Glad to meet you!",
+                "hi" : " Hi,Glad to meet you!",
+                "Hello" : "Hello,Glad to meet you!",
+                "heyy":"heyy,Glad to meet you!",
+
+                "me too":"hifi hifi",
+                "how are you?" : "Good!!,How can I help you?",
+                "Tell me about Covid":" Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.",
+                "What are the symptoms of Covid":" Fever,Cold,Cough,Headache,Loss of sense of taste and smell...",
+                "ok" : " :)",
+                "What are the preventive measures":" Wash hands regularly, Use masks and sanitizers",
+                "What do you know about TamilNadu":" Well... TamilNadu is rich in its culture and heritage and ofcourse famous for its tourist spots and food",
+                "Tell me about TamilNadus Places of interest":"Well Tamilnadu is famous for its temples and beach.The Most famous temples are Madurai Meenakshi amman temple ,Kapaleeshwarar temple and Chennai and many more.. ",
+                "Beaches":"The Most famous beach of Tamilnadu include The Marina Beach which is the world's second largest beach",
+                "Tell me about Marina Beach":"Yeah!! Marina Beach is a natural urban beach in Chennai, Tamil Nadu, India, along the Bay of Bengal. The beach runs from near Fort St. George in the north to Foreshore Estate in the south, a distance of 6.0 km, making it the longest natural urban beach in the country.",
+                "What are the famous food of TamilNadu?":"Woow ! My favourites are Idly,Pongal,Vada,Sambar and Tea,Coffee",
+                "The BestSellers of TamilNadu":"Yeah!! The BestSellers of TamilNadu are Dosa,Carrot Halwa,Pongal and Coffee!!!",
+                "Thanks" : " My Pleasure",
+                "Bye" : "Bye Take care",
+                "Thanks Bye" : "See you soon",
+            };
+
+            
+             function talk() {
+
+                var uname = document.getElementById("uname").value;
+                
+                if (count==1){
+                alert("Hello "+uname+"!!!\nMessage Initiation Successful .. \nNo Chats till now.. \n  You can start your Interaction..");
+                let msg = "Welcome"+uname;
+                
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                
+                speech.text = msg;
+                speech.volume = 10;
+                speech.rate = 1;
+                speech.pitch = 4;
+                
+                window.speechSynthesis.speak(speech);
+
+                 count = count +1;
+                 
+            }
+                var user = document.getElementById("userBox").value;
+                document.getElementById("userBox").value = "";
+                document.getElementById("log").innerHTML += "Me: "+user+"<br>";
+
+                
+                if (user in know) {
+                    
+                    document.getElementById("log").innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbspBot:"+know[user]+"<br>";
+                    document.getElementById("log").innerHTML += "___________________________________________________________<br>"
+                    let msg = know[user];
+                
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                
+                speech.text = msg;
+                speech.volume = 10;
+                speech.rate = 1;
+                speech.pitch = 4;
+                
+                window.speechSynthesis.speak(speech);
+                
+                    
+                } else {
+                    document.getElementById("log").innerHTML += "&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp"+"Bot : Dint get you, Could you please come again!...<br>";
+                    document.getElementById("log").innerHTML += "___________________________________________________________<br>"
+                    let msg = "Dint get you, Could you please come again";
+                
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                
+                speech.text = msg;
+                speech.volume = 10;
+                speech.rate = 1;
+                speech.pitch = 4;
+                
+                window.speechSynthesis.speak(speech);
+                 
+                    
+                }
+            } 
+            function on() {
+                 document.getElementById("overlay").style.display = "block";
+             }
+
+             function off() {
+                 document.getElementById("overlay").style.display = "none";
+             }
+
+             function popup() {
+                const open = document.getElementById("open");
+                const close = document.getElementById("close");
+                const container = document.getElementById("container");
+
+                open.addEventListener("click", () => {
+                    container.classList.add("active");
+                });
+
+                close.addEventListener("click", () => {
+                    container.classList.remove("active");
+                });
+
+                 // body...
+             }
+             window.setInterval(function() {
+              var elem = document.getElementById('log');
+              elem.scrollTop = elem.scrollHeight;
+            }, 1000);
+        </script>
+        <link rel="shortcut icon" href="chat.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <center>
+           <button class="rightfl" onclick="on()"><img src="question.png" height="50px" width="50px" class="rightfl" onclick="on()"></button>
+           
+
+            <div id="overlay">
+                <i class="fa fa-home fa-3x" onclick="off()"></i>
+                <h1>Wanna know what info I can give you ??</h1>
+
+               <p id="text">
+                  This Bot is a multi discipline bot that not only gives you health tips but can also guide you in various ways!!
+                   CHAT WITH ME Bot can help you out with the following:
+                   <br>
+                   <br>
+                   <b>Domain 1 - Health care(Covid-19)</b><br>
+                    1.Give you info about what is Covid-19 and its symptoms<br>
+                    2.Preventive measures of Covid-19
+                    <br><br>
+                   <b>Domain 2 - Travel</b><br>
+                    1.Places of Interest in Chennai<br>
+                    2.Information about Marina beach of Chennai
+                    <br><br>
+                    <b>Domain 3 - Food Specialities of Tamilnadu</b><br>
+                    1.Famous Food of TamilNadu<br>
+                    2.BestSellers of TamilNadu
+                    <br><br>
+
+                   
+               </p>
+            </div>
+
+            
+            <div id="heading">
+        <p id="chatLog"><img src="chat.png" height="50px" width="50px">- - CHAT  WITH   ME - -<img src="https://outgrow.co/images/robo_small.gif" height="70px" width="60px"></p></div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle-o fa-2x"></i>&nbsp;&nbsp;&nbsp;<input type="text" id="uname" placeholder="Enter your name" required="text">
+        <button id="open" class="rightfl2" onclick="popup()">Need Help on Questions?</button>
+
+        <div class="popup-container" id="container">
+            <div class="popup">
+                <button id="close">&times;</button>
+                <h1>You can ask me the following:</h1>
+                <p>
+                    <ol>
+                        <li>Tell me about Covid</li>
+                        <li>What are the symptoms of Covid</li>
+                        <li>What are the preventive measures</li>
+                        <li>What do you know about TamilNadu</li>
+                        <li>Tell me about TamilNadus Places of interest</li>
+                        <li>Beaches</li>
+                        <li>Tell me about Marina Beach</li>
+                        <li>What are the famous food of TamilNadu?</li>
+                        <li>The BestSellers of TamilNadu</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+        <br>
+
+        <br>
+        <section id="log" ><p class="txt">Your Chat Screen <img src="chat.png" height="50px" width="50px"></p></section>
+       <img src="bot.png" class="rightfl" height="260px" width="200px">
+        <br>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-commenting fa-3x" onclick="talk()" ></i>&nbsp;&nbsp;&nbsp; <input id="userBox" type="text" onkeydown="if (event.keyCode == 13) {talk()}" placeholder="Chat with me...." required="text">&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-paper-plane fa-2x"  onclick="talk()" ></i>
+         
+         <br><br><br><br><br><br><br><br><br><br><br>
+         <div id="footer">
+  <div class="container text-center">
+    <p>Made by<i class="fa fa-heart-o "></i>Surajram.S</p>
+  </div>
+
+</section>
+    </center>
+    </body>
+    <script type="text/javascript">
+            window.onload = function(){ 
+
+                alert("-----------------------------------------\n Your Bot in getting Loaded \n Get ready to Chat with him and be amazed\n Loading...\n ------------------------------------------\nHave a look of the things that the bot can give you from the help ? section");
+                sleep(2);
+
+                }
+</script>
+</html>
